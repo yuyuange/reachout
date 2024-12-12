@@ -60,7 +60,3 @@ for i in range(start_number, end_number + 1):
     if retry_count == max_retry:
        print(f"Failed to download {url} after {max_retry} retries")
 driver.quit()
-# https://eol.jsc.nasa.gov/OriginalImagery/iss030e50761.NEF
-
-# https://eol.jsc.nasa.gov/OriginalImagery/iss030e115220.NEFdownload_url
-# https://eol.jsc.nasa.gov/SearchPhotos/photo.pl?mission=ISS030&roll=E&frame=115211
