@@ -14,14 +14,14 @@ from selenium import webdriver
 
 
 ####
-series = '072'
-start_number = 174820
-end_number = 174825
+series = '030'
+start_number = 115230
+end_number = 115230
 ####
 
 
 path = os.path.dirname(__file__) 
-max_retry = 15
+max_retry = 20
 image_dir = os.path.join(path, series+'/image_raw')
 
 if not os.path.exists(image_dir):
@@ -31,7 +31,7 @@ driver = webdriver.Chrome()
 
 def download_file(url, download_url,file_path):
     driver.get(url)
-    time.sleep(20)
+    time.sleep(15)
     response = requests.get(download_url)
     with open(file_path, 'wb') as file:
         file.write(response.content)
@@ -60,3 +60,7 @@ for i in range(start_number, end_number + 1):
     if retry_count == max_retry:
        print(f"Failed to download {url} after {max_retry} retries")
 driver.quit()
+# https://eol.jsc.nasa.gov/OriginalImagery/iss030e50761.NEF
+
+# https://eol.jsc.nasa.gov/OriginalImagery/iss030e115220.NEFdownload_url
+# https://eol.jsc.nasa.gov/SearchPhotos/photo.pl?mission=ISS030&roll=E&frame=115211
